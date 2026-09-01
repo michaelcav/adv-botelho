@@ -327,7 +327,13 @@ a{text-decoration:none;color:inherit}
 
 .footer{background:#041326;color:#fff;padding:46px 0 22px;border-top:1px solid rgba(255,255,255,.08)}
 .footer-grid{display:grid;grid-template-columns:1.6fr .75fr 1fr;gap:70px;align-items:start}
-.footer-brand img{width:355px;max-width:100%}
+.footer-brand img{
+  width:245px;
+  max-width:100%;
+  max-height:72px;
+  object-fit:contain;
+  object-position:left center;
+}
 .footer-col h4{text-transform:uppercase;font-size:.78rem;letter-spacing:.06em;margin:0 0 18px}
 .footer-col a,.footer-col p{display:block;margin:0 0 10px;color:#d9e0e9;font-size:.9rem}
 .footer-col a:hover{color:var(--gold-2)}
@@ -616,6 +622,29 @@ a{text-decoration:none;color:inherit}
   display:inline-flex;
   align-items:center;
   gap:9px;
+}
+
+/* Navegação e logo do rodapé responsivas */
+@media(max-width:1100px){
+  .header-cta{display:none !important}
+  .footer-brand img{
+    width:210px;
+    max-width:100%;
+    max-height:72px;
+    object-fit:contain;
+    object-position:left center;
+  }
+}
+@media(min-width:761px) and (max-width:1100px){
+  .nav{grid-template-columns:210px 1fr !important}
+}
+@media(max-width:760px){
+  .footer-brand img{width:190px}
+  .practice-cta,
+  .contact-submit{
+    font-size:14px !important;
+  }
+  .why-profile-cta{font-size:15px !important}
 }
 
 .cta-icon{
@@ -1839,7 +1868,7 @@ button:hover .cta-icon{
   color:#071426;
   background:linear-gradient(135deg,#f3d77f,#d49d38);
   font-weight:600;
-  font-size:20px;
+  font-size:15px;
   text-transform:uppercase;
   transition:.3s ease;
 }
